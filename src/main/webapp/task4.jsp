@@ -6,24 +6,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task1</title>
+    <title>Task4</title>
 </head>
 <body>
-<h2>Products and their Suppliers</h2>
+<h2>All Customers and their orders (if any)</h2>
 
 <div>
 <table>
     <thead>
     <tr>
-        <th>Product</th>
         <th>Company</th>
+        <th>Order IDs</th>
     </tr>
     </thead>
     <tbody>
     <c:forEach var="taskResult" items="${taskResults}">
         <tr>
             <td>${taskResult.companyName}</td>
-            <td>${taskResult.productName}</td>
+            <td>${taskResult.orderIds}</td>
         </tr>
     </c:forEach>
     </tbody>

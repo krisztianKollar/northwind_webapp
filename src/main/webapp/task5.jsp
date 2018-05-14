@@ -6,17 +6,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task1</title>
+    <title>Task5</title>
 </head>
 <body>
-<h2>Products and their Suppliers</h2>
+<h2>Suppliers and their single most expensive Product</h2>
 
 <div>
 <table>
     <thead>
     <tr>
-        <th>Product</th>
         <th>Company</th>
+        <th>The most expensive Product</th>
+        <th>Unitprice</th>
     </tr>
     </thead>
     <tbody>
@@ -24,6 +25,7 @@
         <tr>
             <td>${taskResult.companyName}</td>
             <td>${taskResult.productName}</td>
+            <td>${taskResult.unitPrice}</td>
         </tr>
     </c:forEach>
     </tbody>
