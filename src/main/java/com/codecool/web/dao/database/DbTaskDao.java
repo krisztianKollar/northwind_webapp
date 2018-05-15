@@ -21,8 +21,8 @@ public final class DbTaskDao extends AbstractDao implements TaskDao {
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {
             while (resultSet.next()) {
-                String companyName = resultSet.getString("Company");
                 String productName = resultSet.getString("Product");
+                String companyName = resultSet.getString("Company");
                 TaskResult taskResult = new TaskResult(productName, companyName);
                 taskResults.add(taskResult);
             }
