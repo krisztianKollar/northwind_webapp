@@ -40,6 +40,10 @@ public class TaskResult {
         return companyName;
     }
 
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
     public String getProductName() {
         return productName;
     }
@@ -54,25 +58,5 @@ public class TaskResult {
 
     public float getUnitPrice() {
         return unitPrice;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public void setNumberOfProducts(int numberOfProducts) {
-        this.numberOfProducts = numberOfProducts;
-    }
-
-    public void setOrderIds(Array orderIds) {
-        this.orderIds = orderIds;
-    }
-
-    public void setUnitPrice(float unitPrice) {
-        this.unitPrice = unitPrice;
     }
 }

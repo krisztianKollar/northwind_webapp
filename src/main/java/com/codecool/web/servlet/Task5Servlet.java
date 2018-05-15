@@ -32,4 +32,19 @@ public final class Task5Servlet extends AbstractServlet {
         }
         req.getRequestDispatcher("task5.jsp").forward(req, resp);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        try (Connection connection = getConnection(req.getServletContext())) {
+            String filter = req.getParameter("filter");
+            TaskDao taskDao = new DbTask5Dao(connection);
+            List<TaskResult> taskResults = taskDao.findResults(filter);
+
+            req.setAttribute("taskResults", taskResults);
+        } catch (SQLException ex) {
+            throw new ServletException(ex);
+        }
+        req.getRequestDispatcher("task5.jsp").forward(req, resp);
+    }
 }

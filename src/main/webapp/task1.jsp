@@ -26,16 +26,19 @@
             <td>${taskResult.productName}</td>
         </tr>
     </c:forEach>
+    <a href="index.jsp">You can go back to the first page clicking here</a><br><br><br>
     </tbody>
 
-    <form action="filtered" method="get">
+    <form action="task1" method="post">
 
-            You can filter your results by typing a (part of a) word from product:<br>
+            You can filter your results by typing a (part of a) word from Product:<br>
             <input type="text" id="filter" name="filter" placeholder="Please enter your filter"><br><br>
             <input type="submit" value="FILTER"><br><br>
     </form>
+    <form action="task1" method="get">
+            <input type="submit" value="BACK"><br><br>
+    </form>
 
-    <!-- str1.toLowerCase().contains(str2.toLowerCase()) -->
 </div>
 </body>
 </html>

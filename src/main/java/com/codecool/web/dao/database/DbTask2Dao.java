@@ -33,4 +33,25 @@ public final class DbTask2Dao extends AbstractDao implements TaskDao {
         }
         return taskResults;
     }
+
+
+    public List<TaskResult> findResults(String filter) throws SQLException {
+        List<TaskResult> taskResults = new ArrayList<>();
+        String sql = "select companyname as Company, count(companyname) as NumberOfProducts from suppliers " +
+                "join products on suppliers.supplierid = products.supplierid " +
+                "group by companyname " +
+                "order by numberofproducts desc, company";
+        try (Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(sql)) {
+            while (resultSet.next()) {
+                String companyName = resultSet.getString("Company");
+                int numberOfProducts = resultSet.getInt("NumberOfProducts");
+                if (companyName.toLowerCase().contains(filter.toLowerCase())) {
+                    TaskResult taskResult = new TaskResult(companyName, numberOfProducts);
+                    taskResults.add(taskResult);
+                }
+            }
+        }
+        return taskResults;
+    }
 }

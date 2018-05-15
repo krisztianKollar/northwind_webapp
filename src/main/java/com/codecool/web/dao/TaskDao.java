@@ -8,4 +8,5 @@ import java.util.List;
 public interface TaskDao {
 
     public List<TaskResult> findResults() throws SQLException;
+    public List<TaskResult> findResults(String filter) throws SQLException;
 }

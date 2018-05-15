@@ -24,7 +24,18 @@
             <td>${taskResult.companyName}</td>
         </tr>
     </c:forEach>
-    </tbody>
+    <a href="index.jsp">You can go back to the first page clicking here</a><br><br><br>
+            </tbody>
+
+            <form action="task3" method="post">
+
+                    You can filter your results by typing a (part of a) word from Company:<br>
+                    <input type="text" id="filter" name="filter" placeholder="Please enter your filter"><br><br>
+                    <input type="submit" value="FILTER"><br><br>
+            </form>
+            <form action="task3" method="get">
+                    <input type="submit" value="BACK"><br><br>
+            </form>
 </div>
 </body>
 </html>
